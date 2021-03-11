@@ -1,0 +1,83 @@
+<% layout('layouts/boilerplate') %>
+<h1>Editar Viaje</h1>
+<form action="/viajes/<%= viaje._id %>?_method=PUT" method="POST">
+  <div>
+    <label for="eco">Economico</label>
+    <input type="text" id="eco" name="viaje[eco]" value="<%= viaje.eco %> " />
+  </div>
+  <div>
+    <label for="fecha">Fecha</label>
+    <input
+      type="date"
+      id="fecha"
+      name="viaje[fecha]"
+      value="<%= `${new Date(viaje.fecha).toISOString().substring(0, 10)}` %>"
+    />
+  </div>
+  <div>
+    <label for="remision">Remision</label>
+    <input
+      type="number"
+      id="remision"
+      name="viaje[remision]"
+      value="<%= viaje.remision[0] %>"
+    />
+  </div>
+  <div>
+    <label for="origen">Origen</label>
+    <input
+      type="text"
+      id="origen"
+      name="viaje[origen]"
+      value="<%= viaje.origen %> "
+    />
+  </div>
+  <div>
+    <label for="destino">Destino</label>
+    <input
+      type="text"
+      id="destino"
+      name="viaje[destino]"
+      value="<%= viaje.destino %>"
+    />
+  </div>
+  <div>
+    <label for="operador">Operador</label>
+    <input
+      type="text"
+      id="operador"
+      name="viaje[operador]"
+      value="<%= viaje.operador %>"
+    />
+  </div>
+  <div>
+    <label for="flete">Flete</label>
+    <input
+      type="number"
+      id="flete"
+      name="viaje[flete]"
+      value="<%= viaje.flete %>"
+    />
+  </div>
+  <div>
+    <label for="factura">Factura</label>
+    <input
+      type="number"
+      id="factura"
+      name="viaje[factura]"
+      value="<%= viaje.factura %>"
+    />
+  </div>
+  <div>
+    <label for="observaciones">Observaciones</label>
+    <input
+      type="text"
+      id="observaciones"
+      name="viaje[observaciones]"
+      value="<%= viaje.observaciones %> "
+    />
+  </div>
+  <button>Actualizar viaje</button>
+</form>
+
+<a href="/viajes/<%= viaje._id %>">Regresar al viaje</a>

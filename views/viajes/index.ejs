@@ -1,0 +1,11 @@
+<% layout('layouts/boilerplate') %>
+
+<h1>Todos los viajes</h1>
+<div>
+  <a href="/viajes/nuevo">Agregar viaje</a>
+</div>
+<ul>
+  <% for (let viaje of viajes) {%>
+  <li><a href="/viajes/<%= viaje._id %> "><%= viaje.fecha %></a></li>
+  <% } %>
+</ul>

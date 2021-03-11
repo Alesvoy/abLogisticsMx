@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') %>
+<h1>Agregar Viaje</h1>
+<form action="/viajes" method="POST">
+  <div>
+    <label for="eco">Economico</label>
+    <input type="text" id="eco" name="viaje[eco]" />
+  </div>
+  <div>
+    <label for="fecha">Fecha</label>
+    <input type="date" id="fecha" name="viaje[fecha]" />
+  </div>
+  <div>
+    <label for="remision">Remision</label>
+    <input type="number" id="remision" name="viaje[remision]" />
+  </div>
+  <div>
+    <label for="origen">Origen</label>
+    <input type="text" id="origen" name="viaje[origen]" />
+  </div>
+  <div>
+    <label for="destino">Destino</label>
+    <input type="text" id="destino" name="viaje[destino]" />
+  </div>
+  <div>
+    <label for="operador">Operador</label>
+    <input type="text" id="operador" name="viaje[operador]" />
+  </div>
+  <div>
+    <label for="flete">Flete</label>
+    <input type="number" id="flete" name="viaje[flete]" />
+  </div>
+  <div>
+    <label for="factura">Factura</label>
+    <input type="number" id="factura" name="viaje[factura]" />
+  </div>
+  <div>
+    <label for="observaciones">Observaciones</label>
+    <input type="text" id="observaciones" name="viaje[observaciones]" />
+  </div>
+  <button>Agregar viaje</button>
+</form>
+
+<a href="/viajes">Todos los viajes</a>

@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+
+<h1>Información del viaje</h1>
+
+<p>Economico: <%= viaje.eco %></p>
+<p>Fecha: <%= viaje.fecha %></p>
+<p>Remision: <%= viaje.remision %></p>
+<p>Origen: <%= viaje.origen %></p>
+<p>Destino: <%= viaje.destino %></p>
+<p>Operador: <%= viaje.operador %></p>
+<p>Flete: <%= viaje.flete %></p>
+<p>Factura: <%= viaje.factura %></p>
+<p>Observaciones: <%= viaje.observaciones %></p>
+
+<p><a href="/viajes/<%= viaje._id %>/editar">Editar</a></p>
+<p>
+    <form action="/viajes/<%= viaje._id %>?_method=DELETE" method="POST">
+        <button>Eliminar</button>
+    </form>
+</p>
+
+<a href="/viajes">Todos los viajes</a>
