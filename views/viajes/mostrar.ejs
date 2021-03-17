@@ -3,7 +3,7 @@
 <h1>Información del viaje</h1>
 
 <p>Economico: <%= viaje.eco %></p>
-<p>Fecha: <%= viaje.fecha %></p>
+<p>Fecha: <%= new Date(viaje.fecha).toISOString() %></p>
 <p>Remision: <%= viaje.remision %></p>
 <p>Origen: <%= viaje.origen %></p>
 <p>Destino: <%= viaje.destino %></p>
