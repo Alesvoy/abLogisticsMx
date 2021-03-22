@@ -1,22 +1,31 @@
 <% layout('layouts/boilerplate') %>
 
-<h1>Información del viaje</h1>
-
-<p>Economico: <%= viaje.eco %></p>
-<p>Fecha: <%= new Date(viaje.fecha).toISOString() %></p>
-<p>Remision: <%= viaje.remision %></p>
-<p>Origen: <%= viaje.origen %></p>
-<p>Destino: <%= viaje.destino %></p>
-<p>Operador: <%= viaje.operador %></p>
-<p>Flete: <%= viaje.flete %></p>
-<p>Factura: <%= viaje.factura %></p>
-<p>Observaciones: <%= viaje.observaciones %></p>
-
-<p><a href="/viajes/<%= viaje._id %>/editar">Editar</a></p>
-<p>
-    <form action="/viajes/<%= viaje._id %>?_method=DELETE" method="POST">
-        <button>Eliminar</button>
-    </form>
-</p>
-
-<a href="/viajes">Todos los viajes</a>
+<div class="card">
+  <div class="card-header text-center">Información del viaje</div>
+  <div class="card-body">
+    <p class="card-text">Economico: <%= viaje.eco %></p>
+    <p class="card-text">
+      Fecha: <%= `${new Date(viaje.fecha).toISOString().substring(0, 10)}` %>
+    </p>
+    <p class="card-text">Remision: <%= viaje.remision %></p>
+    <p class="card-text">Origen: <%= viaje.origen %></p>
+    <p class="card-text">Destino: <%= viaje.destino %></p>
+    <p class="card-text">Operador: <%= viaje.operador %></p>
+    <p class="card-text">Flete: <%= viaje.flete %></p>
+    <p class="card-text">Factura: <%= viaje.factura %></p>
+    <p class="card-text">Observaciones: <%= viaje.observaciones %></p>
+    <div class="text-center">
+      <a href="/viajes/buscar" class="btn btn-outline-secondary">Ver viajes</a>
+      <a href="/viajes/<%= viaje._id %>/editar" class="btn btn-outline-warning"
+        >Editar</a
+      >
+      <form
+        class="d-inline"
+        action="/viajes/<%= viaje._id %>?_method=DELETE"
+        method="POST"
+      >
+        <button class="btn btn-outline-danger">Eliminar</button>
+      </form>
+    </div>
+  </div>
+</div>

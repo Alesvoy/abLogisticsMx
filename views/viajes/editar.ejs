@@ -1,5 +1,105 @@
 <% layout('layouts/boilerplate') %>
-<h1>Editar Viaje</h1>
+
+<h3>Editar Viaje</h3>
+
+<form class="mb-2" action="/viajes/<%= viaje._id %>?_method=PUT" method="POST">
+  <div class="mb-3">
+    <label for="eco" class="form-label">Economico</label>
+    <input
+      class="form-control"
+      type="text"
+      id="eco"
+      name="viaje[eco]"
+      value="<%= viaje.eco %> "
+    />
+  </div>
+  <div class="mb-3">
+    <label for="fecha" class="form-label">Fecha</label>
+    <input
+      class="form-control"
+      type="date"
+      id="fecha"
+      name="viaje[fecha]"
+      value="<%= `${new Date(viaje.fecha).toISOString().substring(0, 10)}` %>"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="remision" class="form-label">Remision</label>
+    <input
+      class="form-control"
+      type="number"
+      id="remision"
+      name="viaje[remision]"
+      value="<%= viaje.remision[0] %>"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="origen" class="form-label">Origen</label>
+    <input
+      class="form-control"
+      type="text"
+      id="origen"
+      name="viaje[origen]"
+      value="<%= viaje.origen %> "
+    />
+  </div>
+  <div class="mb-3">
+    <label for="destino" class="form-label">Destino</label>
+    <input
+      class="form-control"
+      type="text"
+      id="destino"
+      name="viaje[destino]"
+      value="<%= viaje.destino %>"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="operador" class="form-label">Operador</label>
+    <input
+      class="form-control"
+      type="text"
+      id="operador"
+      name="viaje[operador]"
+      value="<%= viaje.operador %>"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="flete" class="form-label">Flete</label>
+    <input
+      class="form-control"
+      type="number"
+      id="flete"
+      name="viaje[flete]"
+      value="<%= viaje.flete %>"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="factura" class="form-label">Factura</label>
+    <input
+      class="form-control"
+      type="number"
+      id="factura"
+      name="viaje[factura]"
+      value="<%= viaje.factura %>"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="observaciones" class="form-label">Observaciones</label>
+    <input
+      class="form-control"
+      type="text"
+      id="observaciones"
+      name="viaje[observaciones]"
+      value="<%= viaje.observaciones %> "
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Actualizar viaje</button>
+  <a class="btn btn-outline-secondary" href="/viajes/<%= viaje._id %>"
+    >Regresar a la informacion del viaje</a
+  >
+</form>
+
+<!-- <h1>Editar Viaje</h1>
 <form action="/viajes/<%= viaje._id %>?_method=PUT" method="POST">
   <div>
     <label for="eco">Economico</label>
@@ -80,4 +180,4 @@
   <button>Actualizar viaje</button>
 </form>
 
-<a href="/viajes/<%= viaje._id %>">Regresar al viaje</a>
+<a href="/viajes/<%= viaje._id %>">Regresar al viaje</a> -->

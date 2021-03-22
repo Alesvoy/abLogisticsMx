@@ -1,43 +1,83 @@
 <% layout('layouts/boilerplate') %>
-<h1>Agregar Viaje</h1>
-<form action="/viajes" method="POST">
-  <div>
-    <label for="eco">Economico</label>
-    <input type="text" id="eco" name="viaje[eco]" />
-  </div>
-  <div>
-    <label for="fecha">Fecha</label>
-    <input type="date" id="fecha" name="viaje[fecha]" />
-  </div>
-  <div>
-    <label for="remision">Remision</label>
-    <input type="number" id="remision" name="viaje[remision]" />
-  </div>
-  <div>
-    <label for="origen">Origen</label>
-    <input type="text" id="origen" name="viaje[origen]" />
-  </div>
-  <div>
-    <label for="destino">Destino</label>
-    <input type="text" id="destino" name="viaje[destino]" />
-  </div>
-  <div>
-    <label for="operador">Operador</label>
-    <input type="text" id="operador" name="viaje[operador]" />
-  </div>
-  <div>
-    <label for="flete">Flete</label>
-    <input type="number" id="flete" name="viaje[flete]" />
-  </div>
-  <div>
-    <label for="factura">Factura</label>
-    <input type="number" id="factura" name="viaje[factura]" />
-  </div>
-  <div>
-    <label for="observaciones">Observaciones</label>
-    <input type="text" id="observaciones" name="viaje[observaciones]" />
-  </div>
-  <button>Agregar viaje</button>
-</form>
+<h3>Agregar Viaje</h3>
 
-<a href="/viajes">Todos los viajes</a>
+<form class="mb-2" action="/viajes" method="POST">
+  <div class="mb-3">
+    <label for="eco" class="form-label">Economico</label>
+    <select class="form-control" id="eco" name="viaje[eco]">
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="1">1</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="8">8</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="18">18</option>
+      <option value="29">29</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="fecha" class="form-label">Fecha</label>
+    <input type="date" class="form-control" id="fecha" name="viaje[fecha]" />
+  </div>
+  <div class="mb-3">
+    <label for="remision" class="form-label">Remision</label>
+    <input
+      type="number"
+      class="form-control"
+      id="remision"
+      name="viaje[remision]"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="origen" class="form-label">Origen</label>
+    <input type="text" class="form-control" id="origen" name="viaje[origen]" />
+  </div>
+  <div class="mb-3">
+    <label for="destino" class="form-label">Destino</label>
+    <input
+      type="text"
+      class="form-control"
+      id="destino"
+      name="viaje[destino]"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="operador" class="form-label">Operador</label>
+    <input
+      type="text"
+      class="form-control"
+      id="operador"
+      name="viaje[operador]"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="flete" class="form-label">Flete</label>
+    <input type="number" class="form-control" id="flete" name="viaje[flete]" />
+  </div>
+  <div class="mb-3">
+    <label for="factura" class="form-label">Factura</label>
+    <input
+      type="number"
+      class="form-control"
+      id="factura"
+      name="viaje[factura]"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="observaciones" class="form-label">Observaciones</label>
+    <input
+      type="text"
+      class="form-control"
+      id="observaciones"
+      name="viaje[observaciones]"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Agregar viaje</button>
+  <a class="btn btn-outline-secondary" href="/viajes">Regresar al menu</a>
+</form>

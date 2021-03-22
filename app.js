@@ -31,8 +31,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/viajes", async (req, res) => {
+  res.render("viajes/index");
+});
+
+app.get("/viajes/buscar", async (req, res) => {
   const viajes = await Viaje.find({});
-  res.render("viajes/index", { viajes });
+  res.render("viajes/buscar", { viajes });
 });
 
 app.get("/viajes/nuevo", (req, res) => {
@@ -64,7 +68,7 @@ app.put("/viajes/:id", async (req, res) => {
 app.delete("/viajes/:id", async (req, res) => {
   const { id } = req.params;
   await Viaje.findByIdAndDelete(id);
-  res.redirect("/viajes");
+  res.redirect("/viajes/buscar");
 });
 
 app.listen(3000, () => {
