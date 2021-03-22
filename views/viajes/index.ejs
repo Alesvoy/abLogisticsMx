@@ -4,20 +4,52 @@
 <div>
   <a href="/viajes/nuevo">Agregar viaje</a>
 </div>
-<ul>
-  <% for (let viaje of viajes) {%>
-  <li>
-    <a href="/viajes/<%= viaje._id %> "
-      ><%= new Date(viaje.fecha).toISOString() %></a
-    >
-  </li>
-  <% } %>
-</ul>
+
+<form action="/viajes">
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label for="eco">Economico</label>
+        <select class="form-control" id="eco">
+          <option>22</option>
+          <option>23</option>
+          <option>24</option>
+          <option>25</option>
+          <option>26</option>
+          <option>1</option>
+          <option>3</option>
+          <option>4</option>
+          <option>8</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>18</option>
+          <option>29</option>
+        </select>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="fechaInicio">Fecha de inicio</label>
+        <input class="form-control" type="date" placeholder="Default input" />
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="fechaFin">Fecha final</label>
+        <input class="form-control" type="date" placeholder="Default input" />
+      </div>
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-outline-primary mt-4">Buscar</button>
+    </div>
+  </div>
+</form>
 
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">Fecha</th>
+      <th scope="col">Dia</th>
       <th scope="col">No. Viaje</th>
       <th scope="col">Remision</th>
       <th scope="col">Origen</th>
@@ -26,14 +58,15 @@
       <th scope="col">Flete</th>
       <th scope="col">Factura</th>
       <th scope="col">Observaciones</th>
-      <th scope="col">Acciones</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
-    <% for (let viaje of viajes) {%> <% const fecha = new Date(viaje.fecha) %>
+    <% let i = 1 %> <% for (let viaje of viajes) {%> <% const fecha = new
+    Date(viaje.fecha) %>
     <tr>
       <th scope="row"><%= fecha.getDate() + 1 %></th>
-      <td>1</td>
+      <td><%= i %></td>
       <td><%= viaje.remision %></td>
       <td><%= viaje.origen %></td>
       <td><%= viaje.destino %></td>
@@ -49,6 +82,6 @@
         >
       </td>
     </tr>
-    <% } %>
+    <% i++ %> <% } %>
   </tbody>
 </table>
