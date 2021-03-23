@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate') %>
 
-<form action="/viajes">
+<form action="/viajes/buscar" method="POST">
   <div class="row">
     <div class="col">
       <div class="form-group">
@@ -25,13 +25,13 @@
     </div>
     <div class="col">
       <div class="form-group">
-        <label for="fechaInicio">Fecha de inicio</label>
+        <label for="fechaInicial">Fecha de inicio</label>
         <input class="form-control" type="date" placeholder="Default input" />
       </div>
     </div>
     <div class="col">
       <div class="form-group">
-        <label for="fechaFin">Fecha final</label>
+        <label for="fechaFinal">Fecha final</label>
         <input class="form-control" type="date" placeholder="Default input" />
       </div>
     </div>
