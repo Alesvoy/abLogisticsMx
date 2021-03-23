@@ -1,11 +1,11 @@
 <% layout('layouts/boilerplate') %>
 
-<form action="/viajes/buscar" method="POST">
+<form action="/viajes/buscar">
   <div class="row">
     <div class="col">
       <div class="form-group">
         <label for="eco">Economico</label>
-        <select class="form-control" id="eco">
+        <select name="eco" id="eco" class="form-control">
           <option value="22">22</option>
           <option value="23">23</option>
           <option value="24">24</option>
@@ -26,13 +26,23 @@
     <div class="col">
       <div class="form-group">
         <label for="fechaInicial">Fecha de inicio</label>
-        <input class="form-control" type="date" placeholder="Default input" />
+        <input
+          class="form-control"
+          name="fechaInicial"
+          type="date"
+          value="<%= q.fechaInicial %>"
+        />
       </div>
     </div>
     <div class="col">
       <div class="form-group">
         <label for="fechaFinal">Fecha final</label>
-        <input class="form-control" type="date" placeholder="Default input" />
+        <input
+          class="form-control"
+          name="fechaFinal"
+          type="date"
+          value="<%= q.fechaFinal %>"
+        />
       </div>
     </div>
     <div class="col">
@@ -66,7 +76,7 @@
       <td><%= viaje.origen %></td>
       <td><%= viaje.destino %></td>
       <td><%= viaje.operador %></td>
-      <td><%= viaje.flete %></td>
+      <td>$<%= viaje.flete %>.00</td>
       <td><%= viaje.factura %></td>
       <td><%= viaje.observaciones %></td>
       <td>

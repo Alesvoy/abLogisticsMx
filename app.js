@@ -35,8 +35,20 @@ app.get("/viajes", async (req, res) => {
 });
 
 app.get("/viajes/buscar", async (req, res) => {
-  const viajes = await Viaje.find({});
-  res.render("viajes/buscar", { viajes });
+  const q = req.query;
+  if (Object.keys(q).length === 0 && q.constructor === Object) {
+    const viajes = await Viaje.find({});
+    res.render("viajes/buscar", { viajes, q });
+  } else {
+    const viajes = await Viaje.find({
+      eco: q.eco,
+      fecha: {
+        $gte: q.fechaInicial,
+        $lt: q.fechaFinal,
+      },
+    });
+    res.render("viajes/buscar", { viajes, q });
+  }
 });
 
 app.get("/viajes/nuevo", (req, res) => {
