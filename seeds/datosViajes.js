@@ -1,12 +1,12 @@
 module.exports = [
   {
-    eco: 22,
+    unidad: 22,
     fecha: new Date(2021, 01, 01),
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     observaciones: "FESTIVO CARGO CORONA PARA MARTES",
   },
   {
-    eco: 22,
+    unidad: 22,
     fecha: new Date(2021, 01, 02),
     remision: [39949316],
     origen: "SCPM CCG",
@@ -17,7 +17,7 @@ module.exports = [
     observaciones: "",
   },
   {
-    eco: 22,
+    unidad: 22,
     fecha: new Date(2021, 01, 02),
     remision: [39949979],
     origen: "SCPM CCG",
@@ -28,7 +28,7 @@ module.exports = [
     observaciones: "",
   },
   {
-    eco: 22,
+    unidad: 22,
     fecha: new Date(2021, 01, 03),
     remision: [39950519, 39950518],
     origen: "SCPM CCG",
@@ -39,7 +39,7 @@ module.exports = [
     observaciones: "",
   },
   {
-    eco: 22,
+    unidad: 22,
     fecha: new Date(2021, 01, 03),
     remision: [39951174, 39951176, 39951177],
     origen: "SCPM CCG",
@@ -50,7 +50,7 @@ module.exports = [
     observaciones: "",
   },
   {
-    eco: 22,
+    unidad: 22,
     fecha: new Date(2021, 01, 04),
     remision: [39951478],
     origen: "SCPM CCG",
@@ -61,7 +61,7 @@ module.exports = [
     observaciones: "DOBLE",
   },
   {
-    eco: 22,
+    unidad: 22,
     fecha: new Date(2021, 01, 05),
     remision: [39952523, 39952526, 39952528],
     origen: "SCPM CCG",
@@ -72,7 +72,7 @@ module.exports = [
     observaciones: "DOBLE",
   },
   {
-    eco: 22,
+    unidad: 22,
     fecha: new Date(2021, 01, 05),
     remision: [39953242],
     origen: "SCPM CCG",
@@ -83,7 +83,7 @@ module.exports = [
     observaciones: "",
   },
   {
-    eco: 22,
+    unidad: 22,
     fecha: new Date(2021, 01, 06),
     remision: [39953242, 39953736],
     origen: "SCPM CCG",
@@ -94,7 +94,7 @@ module.exports = [
     observaciones: "",
   },
   {
-    eco: 22,
+    unidad: 22,
     fecha: new Date(2021, 01, 07),
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     observaciones: "CARGO CORONA PARA LUNES",

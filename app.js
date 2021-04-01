@@ -3,6 +3,8 @@ const path = require("path");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const Viaje = require("./models/viaje");
+const Unidad = require("./models/unidad");
+const Operador = require("./models/operador");
 
 mongoose.connect("mongodb://localhost:27017/ab-logistics-mx", {
   useNewUrlParser: true,

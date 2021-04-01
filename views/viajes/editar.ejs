@@ -4,13 +4,13 @@
 
 <form class="mb-2" action="/viajes/<%= viaje._id %>?_method=PUT" method="POST">
   <div class="mb-3">
-    <label for="eco" class="form-label">Economico</label>
+    <label for="unidad" class="form-label">Economico</label>
     <input
       class="form-control"
       type="text"
-      id="eco"
-      name="viaje[eco]"
-      value="<%= viaje.eco %> "
+      id="unidad"
+      name="viaje[unidad]"
+      value="<%= viaje.unidad %> "
     />
   </div>
   <div class="mb-3">

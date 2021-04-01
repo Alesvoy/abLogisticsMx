@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ViajeSchema = new Schema({
-  eco: Number,
+  unidad: Number,
   fecha: Date,
   remision: [Number],
   origen: String,
