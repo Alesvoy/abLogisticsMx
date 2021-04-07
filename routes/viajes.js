@@ -5,7 +5,7 @@ const Viaje = require("../models/viaje");
 const Unidad = require("../models/unidad");
 const Operador = require("../models/operador");
 
-router.get("/", async (req, res) => {
+router.get("/", (req, res) => {
   res.render("viajes/index");
 });
 

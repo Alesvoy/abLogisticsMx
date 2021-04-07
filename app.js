@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 
 // Routes
 const viajesRoutes = require("./routes/viajes");
+const operadoresRoutes = require("./routes/operadores");
 
 mongoose.connect("mongodb://localhost:27017/ab-logistics-mx", {
   useNewUrlParser: true,
@@ -33,6 +34,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/viajes", viajesRoutes);
+app.use("/operadores", operadoresRoutes);
 
 app.listen(3000, () => {
   console.log("Serving on port 3000!");

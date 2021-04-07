@@ -45,6 +45,8 @@ const seedDB = async () => {
   for (let i = 0; i < 20; i++) {
     const operador = new Operador({
       nombre: operadores[i].nombre,
+      division: operadores[i].division,
+      unidad: operadores[i].unidad,
     });
     await operador.save();
   }
