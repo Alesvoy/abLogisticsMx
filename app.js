@@ -2,9 +2,9 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
-const Viaje = require("./models/viaje");
-const Unidad = require("./models/unidad");
-const Operador = require("./models/operador");
+
+// Routes
+const viajesRoutes = require("./routes/viajes");
 
 mongoose.connect("mongodb://localhost:27017/ab-logistics-mx", {
   useNewUrlParser: true,
@@ -32,58 +32,7 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/viajes", async (req, res) => {
-  res.render("viajes/index");
-});
-
-app.get("/viajes/buscar", async (req, res) => {
-  const q = req.query;
-  if (Object.keys(q).length === 0 && q.constructor === Object) {
-    const viajes = await Viaje.find({});
-    res.render("viajes/buscar", { viajes, q });
-  } else {
-    const viajes = await Viaje.find({
-      eco: q.eco,
-      fecha: {
-        $gte: q.fechaInicial,
-        $lt: q.fechaFinal,
-      },
-    });
-    res.render("viajes/buscar", { viajes, q });
-  }
-});
-
-app.get("/viajes/nuevo", (req, res) => {
-  res.render("viajes/nuevo");
-});
-
-app.post("/viajes", async (req, res) => {
-  const viaje = new Viaje(req.body.viaje);
-  await viaje.save();
-  res.redirect(`/viajes/${viaje._id}`);
-});
-
-app.get("/viajes/:id", async (req, res) => {
-  const viaje = await Viaje.findById(req.params.id);
-  res.render("viajes/mostrar", { viaje });
-});
-
-app.get("/viajes/:id/editar", async (req, res) => {
-  const viaje = await Viaje.findById(req.params.id);
-  res.render("viajes/editar", { viaje });
-});
-
-app.put("/viajes/:id", async (req, res) => {
-  const { id } = req.params;
-  const viaje = await Viaje.findByIdAndUpdate(id, { ...req.body.viaje });
-  res.redirect(`/viajes/${viaje._id}`);
-});
-
-app.delete("/viajes/:id", async (req, res) => {
-  const { id } = req.params;
-  await Viaje.findByIdAndDelete(id);
-  res.redirect("/viajes/buscar");
-});
+app.use("/viajes", viajesRoutes);
 
 app.listen(3000, () => {
   console.log("Serving on port 3000!");
