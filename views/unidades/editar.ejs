@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+
+<h3>Editar Unidad</h3>
+
+<form
+  class="mb-2"
+  action="/unidades/<%= unidad._id %>?_method=PUT"
+  method="POST"
+>
+  <div class="mb-3">
+    <label for="unidad" class="form-label">Unidad</label>
+    <input
+      type="number"
+      class="form-control"
+      id="unidad"
+      name="unidad[unidad]"
+      value="<%= unidad.unidad %>"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Editar Unidad</button>
+  <a class="btn btn-outline-secondary" href="/unidades">Regresar al menu</a>
+</form>

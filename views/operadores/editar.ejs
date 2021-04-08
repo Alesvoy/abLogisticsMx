@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate') %>
+
+<h3>Editar Operador</h3>
+
+<form
+  class="mb-2"
+  action="/operadores/<%= operador._id %>?_method=PUT"
+  method="POST"
+>
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nombre"
+      name="operador[nombre]"
+      value="<%= operador.nombre %> "
+    />
+  </div>
+  <div class="mb-3">
+    <label for="division" class="form-label">Division</label>
+    <select class="form-control" id="division" name="operador[division]">
+      <option value="CCG">CCG</option>
+      <option value="MCG">MCG</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="unidad" class="form-label">Economico</label>
+    <select class="form-control" id="unidad" name="operador[unidad]">
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="1">1</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="8">8</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="18">18</option>
+      <option value="29">29</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Editar Operador</button>
+  <a class="btn btn-outline-secondary" href="/operadores">Regresar al menu</a>
+</form>

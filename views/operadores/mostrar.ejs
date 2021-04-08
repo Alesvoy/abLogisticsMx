@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="card">
+  <div class="card-header text-center">Información del operador</div>
+  <div class="card-body">
+    <p class="card-text">Nombre: <%= operador.nombre %></p>
+    <p class="card-text">Division: <%= operador.division %></p>
+    <p class="card-text">Unidad: <%= operador.unidad %></p>
+    <div class="text-center">
+      <a href="/operadores/buscar" class="btn btn-outline-secondary"
+        >Ver operadores</a
+      >
+      <a
+        href="/operadores/<%= operador._id %>/editar"
+        class="btn btn-outline-warning"
+        >Editar</a
+      >
+      <form
+        class="d-inline"
+        action="/operadores/<%= operador._id %>?_method=DELETE"
+        method="POST"
+      >
+        <button class="btn btn-outline-danger">Eliminar</button>
+      </form>
+    </div>
+  </div>
+</div>
