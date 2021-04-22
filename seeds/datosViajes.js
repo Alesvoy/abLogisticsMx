@@ -13,7 +13,6 @@ module.exports = [
     destino: "CORONA",
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     flete: 2234,
-    factura: 8046,
     observaciones: "",
   },
   {
@@ -24,7 +23,6 @@ module.exports = [
     destino: "CORONA",
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     flete: 2234,
-    factura: 8046,
     observaciones: "",
   },
   {
@@ -35,7 +33,6 @@ module.exports = [
     destino: "CORONA",
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     flete: 2234,
-    factura: 8046,
     observaciones: "",
   },
   {
@@ -46,7 +43,6 @@ module.exports = [
     destino: "CORONA",
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     flete: 2234,
-    factura: 8046,
     observaciones: "",
   },
   {
@@ -57,7 +53,6 @@ module.exports = [
     destino: "CORONA",
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     flete: 2234,
-    factura: 8046,
     observaciones: "DOBLE",
   },
   {
@@ -68,7 +63,6 @@ module.exports = [
     destino: "CORONA",
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     flete: 2234,
-    factura: 8046,
     observaciones: "DOBLE",
   },
   {
@@ -79,7 +73,6 @@ module.exports = [
     destino: "CORONA",
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     flete: 2234,
-    factura: 8046,
     observaciones: "",
   },
   {
@@ -90,7 +83,6 @@ module.exports = [
     destino: "CORONA",
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     flete: 2234,
-    factura: 8046,
     observaciones: "",
   },
   {

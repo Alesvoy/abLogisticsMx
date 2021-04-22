@@ -2,14 +2,22 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ViajeSchema = new Schema({
-  unidad: Number,
-  fecha: Date,
+  unidad: {
+    type: Number,
+    required: true,
+  },
+  fecha: {
+    type: Date,
+    required: true,
+  },
   remision: [Number],
   origen: String,
   destino: String,
-  operador: String,
+  operador: {
+    type: String,
+    required: true,
+  },
   flete: Number,
-  factura: Number,
   observaciones: String,
 });
 
