@@ -5,6 +5,7 @@ const operadores = require("./datosOperadores");
 const Viaje = require("../models/viaje");
 const Operador = require("../models/operador");
 const Unidad = require("../models/unidad");
+const User = require("../models/user");
 
 mongoose.connect("mongodb://localhost:27017/ab-logistics-mx", {
   useNewUrlParser: true,
@@ -22,6 +23,7 @@ const seedDB = async () => {
   await Viaje.deleteMany({});
   await Operador.deleteMany({});
   await Unidad.deleteMany({});
+  await User.deleteMany({});
   for (let i = 0; i < 9; i++) {
     const viaje = new Viaje({
       unidad: viajes[i].unidad,
@@ -50,6 +52,11 @@ const seedDB = async () => {
     });
     await operador.save();
   }
+  const user = new User({
+    username: "admin",
+    password: "admin",
+  });
+  await user.save();
 };
 
 seedDB().then(() => {

@@ -3,11 +3,18 @@ const router = express.Router();
 
 const Operador = require("../models/operador");
 
-router.get("/", (req, res) => {
+const requireLogin = (req, res, next) => {
+  if (!req.session.user_id) {
+    return res.redirect("/login");
+  }
+  next();
+};
+
+router.get("/", requireLogin, (req, res) => {
   res.render("operadores/index");
 });
 
-router.get("/buscar", async (req, res) => {
+router.get("/buscar", requireLogin, async (req, res) => {
   const q = req.query;
   if (Object.keys(q).length === 0 && q.constructor === Object) {
     const operadores = await Operador.find({});
@@ -20,27 +27,27 @@ router.get("/buscar", async (req, res) => {
   }
 });
 
-router.get("/nuevo", (req, res) => {
+router.get("/nuevo", requireLogin, (req, res) => {
   res.render("operadores/nuevo");
 });
 
-router.post("/", async (req, res) => {
+router.post("/", requireLogin, async (req, res) => {
   const operador = new Operador(req.body.operador);
   await operador.save();
   res.redirect(`/operadores/${operador._id}`);
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", requireLogin, async (req, res) => {
   const operador = await Operador.findById(req.params.id);
   res.render("operadores/mostrar", { operador });
 });
 
-router.get("/:id/editar", async (req, res) => {
+router.get("/:id/editar", requireLogin, async (req, res) => {
   const operador = await Operador.findById(req.params.id);
   res.render("operadores/editar", { operador });
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", requireLogin, async (req, res) => {
   const { id } = req.params;
   const operador = await Operador.findByIdAndUpdate(id, {
     ...req.body.operador,
@@ -48,7 +55,7 @@ router.put("/:id", async (req, res) => {
   res.redirect(`/operadores/${operador._id}`);
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", requireLogin, async (req, res) => {
   const { id } = req.params;
   await Operador.findByIdAndDelete(id);
   res.redirect("/operadores/buscar");
