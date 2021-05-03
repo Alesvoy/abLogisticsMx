@@ -38,9 +38,9 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/login", (req, res) => {
-  res.render("login");
-});
+// app.get("/login", (req, res) => {
+//   res.render("login");
+// });
 
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
@@ -49,14 +49,14 @@ app.post("/login", async (req, res) => {
     req.session.user_id = foundUser._id;
     res.redirect("/viajes");
   } else {
-    res.redirect("/login");
+    res.redirect("/");
   }
 });
 
 app.post("/logout", (req, res) => {
   req.session.user_id = null;
   req.session.destroy();
-  res.redirect("/login");
+  res.redirect("/");
 });
 
 app.use("/viajes", viajesRoutes);

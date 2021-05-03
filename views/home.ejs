@@ -18,14 +18,27 @@
         style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url('https://images.unsplash.com/photo-1596455671092-d7e08c435509?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1547&q=80');
         background-size: cover; background-position: center; height: 100vh;">
-        <div class="text-center" style="width: 50vw;">
+        <div class="text-center input-group-center" style="width: 50vw;">
             <h1 class="font-weight-bold text-white">Bienvenido a AB LOGISTICS MX</h1>
             <p style="color: silver;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, magni! Aspernatur a nemo dolorum veniam ab! Molestias earum dicta, iusto harum voluptas consequatur nam amet ducimus? Minima explicabo eos quo!</p>
-            <input type="text" placeholder="Usuario">
-            <input type="text" placeholder="Password">
-            <button>Submit</button>
+            <form class="row justify-content-center" action="/login" method="post" >
+                    <div class="col-auto">
+                        <input class="form-control" type="text" name="username" id="username" placeholder="Usuario">
+                    </div>
+                    <div class="col-auto">
+                        <input
+                        class="form-control"
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Password">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+            </form>
         </div>
-
+        
     </div>
         <%- include('partials/footer') %>
     <script

@@ -5,7 +5,7 @@ const Unidad = require("../models/unidad");
 
 const requireLogin = (req, res, next) => {
   if (!req.session.user_id) {
-    return res.redirect("/login");
+    return res.redirect("/");
   }
   next();
 };
