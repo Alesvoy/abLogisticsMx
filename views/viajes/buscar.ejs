@@ -6,20 +6,9 @@
       <div class="form-group">
         <label for="unidad">Economico</label>
         <select name="unidad" id="unidad" class="form-control">
-          <option value="22">22</option>
-          <option value="23">23</option>
-          <option value="24">24</option>
-          <option value="25">25</option>
-          <option value="26">26</option>
-          <option value="1">1</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="8">8</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="18">18</option>
-          <option value="29">29</option>
+          <% for (let unidad of unidades) { %>
+          <option value="<%= unidad.unidad %>"><%= unidad.unidad %></option>
+          <% } %>
         </select>
       </div>
     </div>
@@ -87,7 +76,7 @@
         >
       </td>
     </tr>
-    <% i++ %> <% } %>
+    <% if(viaje.remision == '') {continue;} else {i++;} %> <% } %>
   </tbody>
 </table>
 

@@ -3,22 +3,11 @@
 
 <form class="mb-2" action="/viajes" method="POST">
   <div class="mb-3">
-    <label for="unidad" class="form-label">Economico</label>
+    <label for="unidad" class="form-label">Unidades</label>
     <select class="form-control" id="unidad" name="viaje[unidad]">
-      <option value="22">22</option>
-      <option value="23">23</option>
-      <option value="24">24</option>
-      <option value="25">25</option>
-      <option value="26">26</option>
-      <option value="1">1</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="8">8</option>
-      <option value="13">13</option>
-      <option value="14">14</option>
-      <option value="15">15</option>
-      <option value="18">18</option>
-      <option value="29">29</option>
+      <% for(let unidad of unidades) { %>
+      <option value="<%= unidad.unidad %>"><%= unidad.unidad %></option>
+      <% } %>
     </select>
   </div>
   <div class="mb-3">
@@ -49,12 +38,11 @@
   </div>
   <div class="mb-3">
     <label for="operador" class="form-label">Operador</label>
-    <input
-      type="text"
-      class="form-control"
-      id="operador"
-      name="viaje[operador]"
-    />
+    <select class="form-control" id="operador" name="viaje[operador]">
+      <% for(let operador of operadores) { %>
+      <option value="<%= operador.nombre %>"><%= operador.nombre %></option>
+      <% } %>
+    </select>
   </div>
   <div class="mb-3">
     <label for="flete" class="form-label">Flete</label>

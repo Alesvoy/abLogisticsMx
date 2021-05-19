@@ -20,7 +20,8 @@ router.get("/buscar", requireLogin, async (req, res) => {
   const q = req.query;
   if (Object.keys(q).length === 0 && q.constructor === Object) {
     const viajes = await Viaje.find({});
-    res.render("viajes/buscar", { viajes, q });
+    const unidades = await Unidad.find({});
+    res.render("viajes/buscar", { viajes, unidades, q });
   } else {
     const viajes = await Viaje.find({
       unidad: q.unidad,
@@ -29,12 +30,15 @@ router.get("/buscar", requireLogin, async (req, res) => {
         $lt: q.fechaFinal,
       },
     });
-    res.render("viajes/buscar", { viajes, q });
+    const unidades = await Unidad.find({});
+    res.render("viajes/buscar", { viajes, unidades, q });
   }
 });
 
-router.get("/nuevo", requireLogin, (req, res) => {
-  res.render("viajes/nuevo");
+router.get("/nuevo", requireLogin, async (req, res) => {
+  const operadores = await Operador.find({});
+  const unidades = await Unidad.find({});
+  res.render("viajes/nuevo", { operadores, unidades });
 });
 
 router.post("/", requireLogin, async (req, res) => {
