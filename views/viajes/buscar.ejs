@@ -6,9 +6,15 @@
       <div class="form-group">
         <label for="unidad">Economico</label>
         <select name="unidad" id="unidad" class="form-control">
-          <% for (let unidad of unidades) { %>
+          <% for (let unidad of unidades) { %> <% if(viajes.length == 0) { %>
           <option value="<%= unidad.unidad %>"><%= unidad.unidad %></option>
-          <% } %>
+          <% } else if(viajes[0].unidad == unidad.unidad) { %>
+          <option value="<%= unidad.unidad %>" selected="selected">
+            <%= unidad.unidad %>
+          </option>
+          <% } else { %>
+          <option value="<%= unidad.unidad %>"><%= unidad.unidad %></option>
+          <% } %> <% } %>
         </select>
       </div>
     </div>

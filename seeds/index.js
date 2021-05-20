@@ -24,7 +24,7 @@ const seedDB = async () => {
   await Operador.deleteMany({});
   await Unidad.deleteMany({});
   await User.deleteMany({});
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < 10; i++) {
     const viaje = new Viaje({
       unidad: viajes[i].unidad,
       fecha: viajes[i].fecha,

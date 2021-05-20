@@ -91,4 +91,14 @@ module.exports = [
     operador: "CESAR FABIAN CIENFUEGOS ROJAS",
     observaciones: "CARGO CORONA PARA LUNES",
   },
+  {
+    unidad: 23,
+    fecha: new Date(2021, 04, 15),
+    remision: [39953242, 39953736],
+    origen: "SCPM CCG",
+    destino: "CORONA",
+    operador: "CESAR FABIAN CIENFUEGOS ROJAS",
+    flete: 2234,
+    observaciones: "",
+  },
 ];
