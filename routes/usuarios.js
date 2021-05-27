@@ -38,4 +38,10 @@ router.put("/:id", requireLogin, async (req, res) => {
   res.redirect("/usuarios");
 });
 
+router.delete("/:id", requireLogin, async (req, res) => {
+  const { id } = req.params;
+  await User.findByIdAndDelete(id);
+  res.redirect("/usuarios");
+});
+
 module.exports = router;

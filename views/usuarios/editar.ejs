@@ -25,12 +25,15 @@
   <div class="text-center">
     <a class="btn btn-outline-secondary" href="/usuarios">Regresar</a>
     <button type="submit" class="btn btn-primary">Editar Usuario</button>
-    <form
-      class="d-inline"
-      action="/usuarios/<%= user._id %>?_method=DELETE"
-      method="POST"
-    >
-      <button class="btn btn-outline-danger">Eliminar</button>
-    </form>
   </div>
 </form>
+
+<div class="text-center">
+  <form
+    class="d-inline"
+    action="/usuarios/<%= user._id %>?_method=DELETE"
+    method="POST"
+  >
+    <button class="btn btn-outline-danger">Eliminar</button>
+  </form>
+</div>
