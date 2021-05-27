@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate') %>
+
+<h3>Editar Usuario</h3>
+
+<form class="mb-2" action="/usuarios/<%= user._id %>?_method=PUT" method="POST">
+  <div class="mb-3">
+    <label for="username" class="form-label">Nombre del usuario</label>
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      name="user[username]"
+      value="<%= user.username %> "
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Clave del usuario</label>
+    <input
+      type="text"
+      class="form-control"
+      id="password"
+      name="user[password]"
+    />
+  </div>
+  <div class="text-center">
+    <a class="btn btn-outline-secondary" href="/usuarios">Regresar</a>
+    <button type="submit" class="btn btn-primary">Editar Usuario</button>
+    <form
+      class="d-inline"
+      action="/usuarios/<%= user._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button class="btn btn-outline-danger">Eliminar</button>
+    </form>
+  </div>
+</form>

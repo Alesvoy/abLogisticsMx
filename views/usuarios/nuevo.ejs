@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate') %>
+
+<h3>Nuevo Usuario</h3>
+
+<form class="mb-2" action="/usuarios" method="POST">
+  <div class="mb-3">
+    <label for="username" class="form-label">Nombre del usuario</label>
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      name="user[username]"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Clave del usuario</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="user[password]"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+  <a class="btn btn-outline-secondary" href="/usuarios">Regresar al menu</a>
+</form>

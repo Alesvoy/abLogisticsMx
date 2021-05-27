@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <a class="btn btn-primary center" href="/usuarios/nuevo">Agregar usuario</a>
+  </div>
+
+  <% for(let user of users) { %>
+  <div class="col-sm-6">
+    <div class="card mb-2">
+      <div class="card-body">
+        <h5 class="card-title"><%= user.username %></h5>
+        <a href="/usuarios/<%= user._id %>/editar " class="btn btn-primary"
+          >Editar</a
+        >
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>

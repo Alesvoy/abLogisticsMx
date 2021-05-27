@@ -9,6 +9,7 @@ const session = require("express-session");
 const viajesRoutes = require("./routes/viajes");
 const operadoresRoutes = require("./routes/operadores");
 const unidadesRoutes = require("./routes/unidades");
+const usuariosRoutes = require("./routes/usuarios");
 
 mongoose.connect("mongodb://localhost:27017/ab-logistics-mx", {
   useNewUrlParser: true,
@@ -62,6 +63,7 @@ app.post("/logout", (req, res) => {
 app.use("/viajes", viajesRoutes);
 app.use("/operadores", operadoresRoutes);
 app.use("/unidades", unidadesRoutes);
+app.use("/usuarios", usuariosRoutes);
 
 app.listen(3000, () => {
   console.log("Serving on port 3000!");
