@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const User = require("./models/user");
 const session = require("express-session");
+const passport = require("passport");
+const LocalStategy = require("passport-local");
 
 // Routes
 const viajesRoutes = require("./routes/viajes");
@@ -25,7 +27,6 @@ db.once("open", () => {
 
 const app = express();
 const ejsMate = require("ejs-mate");
-const user = require("./models/user");
 
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
@@ -34,30 +35,15 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(session({ secret: "notagoodsecret" }));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.get("/", (req, res) => {
   res.render("home");
-});
-
-// app.get("/login", (req, res) => {
-//   res.render("login");
-// });
-
-app.post("/login", async (req, res) => {
-  const { username, password } = req.body;
-  const foundUser = await User.findAndValidate(username, password);
-  if (foundUser) {
-    req.session.user_id = foundUser._id;
-    res.redirect("/viajes");
-  } else {
-    res.redirect("/");
-  }
-});
-
-app.post("/logout", (req, res) => {
-  req.session.user_id = null;
-  req.session.destroy();
-  res.redirect("/");
 });
 
 app.use("/viajes", viajesRoutes);
