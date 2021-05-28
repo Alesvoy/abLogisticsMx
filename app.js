@@ -46,6 +46,12 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
+app.get("/fakeUser", async (req, res) => {
+  const user = new User({ username: "alesvoy" });
+  const newUser = await User.register(user, "alesvoy");
+  res.send(newUser);
+});
+
 app.use("/viajes", viajesRoutes);
 app.use("/operadores", operadoresRoutes);
 app.use("/unidades", unidadesRoutes);
